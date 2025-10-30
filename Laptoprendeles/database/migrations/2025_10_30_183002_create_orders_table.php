@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('user_id')
+                  ->constrained('users')
+                  ->onDelete('cascade');
+
+            $table->foreignId('laptop_id')
+                  ->constrained('laptops')
+                  ->onDelete('cascade');
+
+            $table->integer('quantity')->default(1);
+
+            $table->enum('status', ['új', 'feldolgozás alatt', 'kiszállítva'])
+                  ->default('új');
+
             $table->timestamps();
         });
     }

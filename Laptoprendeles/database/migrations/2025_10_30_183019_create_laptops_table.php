@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('laptops', function (Blueprint $table) {
             $table->id();
+            $table->string('brand');
+            $table->string('model');
+            $table->decimal('price', 10, 2);
+            $table->integer('stock')->default(0);
             $table->timestamps();
         });
     }
