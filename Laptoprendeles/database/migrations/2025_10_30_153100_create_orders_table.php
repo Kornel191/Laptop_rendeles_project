@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
@@ -23,17 +20,11 @@ return new class extends Migration
                   ->onDelete('cascade');
 
             $table->integer('quantity')->default(1);
-
-            $table->enum('status', ['új', 'feldolgozás alatt', 'kiszállítva'])
-                  ->default('új');
-
+            $table->enum('status', ['új', 'feldolgozás alatt', 'kiszállítva'])->default('új');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('orders');

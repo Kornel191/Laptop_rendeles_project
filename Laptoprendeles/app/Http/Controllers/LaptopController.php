@@ -7,59 +7,43 @@ use Illuminate\Http\Request;
 
 class LaptopController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        return response()->json(Laptop::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function show($id)
     {
-        //
+        $laptop = Laptop::findOrFail($id);
+        return response()->json($laptop);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'brand' => 'required|string|max:255',
+            'model' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
+        ]);
+
+        $laptop = Laptop::create($validated);
+        return response()->json($laptop, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Laptop $laptop)
+    public function update(Request $request, $id)
     {
-        //
+        $laptop = Laptop::findOrFail($id);
+        $laptop->update($request->all());
+        return response()->json($laptop);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Laptop $laptop)
+    // Laptop törlése
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Laptop $laptop)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Laptop $laptop)
-    {
-        //
+        $laptop = Laptop::findOrFail($id);
+        $laptop->delete();
+        return response()->json(['message' => 'Laptop törölve.']);
     }
 }
