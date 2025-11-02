@@ -19,7 +19,7 @@ export default function Cart() {
                     <ul className="cart__list">
                         {cart.map((item) => (
                             <li key={item.id} className="cart__item">
-                                <img src={item.image} alt={`${item.brand} ${item.model}`} />
+                                <img src={`http://localhost:8000/${item.image}`} alt={`${item.brand} ${item.model}`} />
                                 <div className="cart__meta">
                                     <strong>{item.brand} {item.model}</strong>
                                     <span>Mennyiség: {item.quantity}</span>

@@ -9,7 +9,7 @@ class Laptop extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['brand', 'model', 'price', 'stock'];
+    protected $fillable = ['brand', 'model', 'price', 'stock','image'];
 
     public function orders()
     {
