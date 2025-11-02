@@ -1,16 +1,13 @@
-import React, { useContext } from "react";
-import LaptopList from "../components/LaptopList";
-import { CartContext } from "../contexts/CartContext";
+import { useContext } from "react";
+import { CartContext } from "../contexts/CartContext.jsx";
+import LaptopList from "../components/LaptopList.jsx";
 
-const Home = () => {
+export default function Home() {
     const { addToCart } = useContext(CartContext);
-
     return (
-        <div>
-            <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>Elérhető Laptopok</h1>
+        <div className="container">
+            <h1 class="title">Elérhető Laptopok</h1>
             <LaptopList addToCart={addToCart} />
         </div>
     );
-};
-
-export default Home;
+}
