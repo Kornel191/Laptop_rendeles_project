@@ -1,0 +1,122 @@
+.footer {
+    background: #00000077;
+    color: #e9e9ea;
+    margin-top: 2rem;
+}
+
+.footer__inner {
+    padding: 1.5rem 1rem;
+}
+
+.footer__brand {
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 2rem;
+    align-items: start;
+}
+
+.footer__heading {
+    font-weight: 700;
+    margin-bottom: .4rem;
+    color: #fff;
+}
+
+.footer__link {
+    display: block;
+    color: #e9e9ea;
+    opacity: .9;
+    margin: .2rem 0;
+}
+
+.footer__link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.footer__copy {
+    margin-top: 1rem;
+    border-top: 1px solid #2a2a2d;
+    padding-top: 0.8rem;
+    font-size: .9rem;
+    color: #c6c6c8;
+}
+
+@media (max-width: 700px) {
+    .footer__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card__btn button:hover {
+    background: #0b5ed7;
+}
+
+.card__btn button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+.card__btn button:disabled:hover {
+    background: #6c757d;
+}
+
+.card__btn button:active {
+    background: #0a58ca;
+}
+
+.card__btn button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, .5);
+}
+
+.card__btn button svg {
+    vertical-align: middle;
+    margin-left: .4rem;
+    fill: #fff;
+}
+
+.card__btn button svg.loading {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card__btn button .btn-text {
+    vertical-align: middle;
+}
+
+.card__btn button .btn-text.loading {
+    margin-right: .4rem;
+}
+
+.card__btn button:disabled .btn-text,
+.card__btn button:disabled svg {
+    opacity: .7;
+}
+
+.card__btn button:disabled svg.loading {
+    animation: none;
+}
+
+.card__btn button:disabled .btn-text.loading {
+    margin-right: 0;
+}
+
+.card__btn button:disabled:hover .btn-text,
+.card__btn button:disabled:hover svg {
+    opacity: .7;
+}
