@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { User } from "react-feather";
+
 
 export default function Navbar({ cartCount = 0 }) {
     return (
@@ -10,6 +12,9 @@ export default function Navbar({ cartCount = 0 }) {
                     <Link to="/" className="nav__link">Kezdőlap</Link>
                     <Link to="/cart" className="nav__link">
                         Kosár {cartCount > 0 && <span className="nav__badge">{cartCount}</span>}
+                    </Link>
+                    <Link to="/profile" className="navbar__icon">
+                        <User size={28} />
                     </Link>
                 </div>
             </div>

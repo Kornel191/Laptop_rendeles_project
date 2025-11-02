@@ -54,11 +54,15 @@
 .card__btn button {
     width: 100%;
     padding: .6rem;
-    background: #0d6efd;
+    background: linear-gradient(to right, #6ec5eb, #093376);
     color: #fff;
     border: none;
     border-radius: 8px;
     font: inherit;
     cursor: pointer;
     transition: background .2s ease;
+}
+
+.card__btn button :hover {
+    background: #041e45;
 }

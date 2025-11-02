@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\LaptopController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/laptops', [LaptopController::class, 'index']);
@@ -17,3 +18,5 @@ Route::get('/', [Controller::class, 'index']);
 Route::get('/endpoint/{id}', [Controller::class, 'show']);
 
 Route::post('/orders', [OrderController::class, 'store']);
+
+Route::post('/users', [UserController::class, 'store']);

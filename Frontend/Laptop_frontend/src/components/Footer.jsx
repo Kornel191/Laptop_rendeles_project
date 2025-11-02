@@ -1,4 +1,6 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
+
 
 export default function Footer() {
 
@@ -35,6 +37,9 @@ export default function Footer() {
                         >
                             {ADDRESS_TEXT}
                         </a>
+                    </div>
+                    <div className="footer__links">
+                        <Link to="/reviews" className="footer__link">Értékelések</Link>
                     </div>
                 </div>
 

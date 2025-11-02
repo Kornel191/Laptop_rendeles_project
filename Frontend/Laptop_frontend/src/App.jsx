@@ -6,6 +6,8 @@ import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import { useContext } from "react";
 import Footer from "./components/Footer.jsx";
+import Profile from "./pages/Profile.jsx";
+import Reviews from "./pages/Reviews.jsx";
 
 function NavWithCount() {
   const { cart } = useContext(CartContext);
@@ -22,6 +24,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/reviews" element={<Reviews />} />
         </Routes>
         <Footer />
       </Router>

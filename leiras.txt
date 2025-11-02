@@ -1,0 +1,7 @@
+Laptop rendelés projekt:
+
+
+-Ez az iskolai feladat Laravel ! React segítségével valósult meg
+-A projekt egy 3 táblás adatbázist tartalmaz melyben a laptop kínálat fixen van rögzítve, a felhasználók és a rendelések rögzítése pedig az oldalon történnek
+-A tesztadatok generálásában, a nagyobb hibák és egy-két stílus elem létrehozásában/kijavításában referenciakönyveket(w3schools, Laravel) és
+a chatGPT-t használtam.
